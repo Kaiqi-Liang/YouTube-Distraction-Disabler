@@ -1,0 +1,31 @@
+{
+  "name": "How to Procrastinate on YouTube Productively",
+  "version": "1.0",
+  "description": "Go on YouTube to watch something productive and not worry about procrastinating on something unrelated",
+  "manifest_version": 2,
+
+  "page_action": {
+    "default_title": "How to Procrastinate on YouTube Productively",
+    "default_icon": "assets/spinner.png"
+  },
+
+  "permissions": ["contextMenus"],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["extension.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "web_accessible_resources": [
+    "assets/spinner_dark.svg",
+    "assets/spinner_light.svg"
+  ]
+}
