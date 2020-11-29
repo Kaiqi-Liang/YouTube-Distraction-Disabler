@@ -6,7 +6,8 @@
 
   "page_action": {
     "default_title": "How to Procrastinate on YouTube Productively",
-    "default_icon": "assets/spinner.png"
+    "default_icon": "assets/spinner.png",
+    "default_popup": "popup.html"
   },
 
   "permissions": ["contextMenus"],
