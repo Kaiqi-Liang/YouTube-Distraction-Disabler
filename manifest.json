@@ -9,7 +9,10 @@
     "default_icon": "assets/spinner.png"
   },
 
-  "permissions": ["contextMenus"],
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
 
   "background": {
     "scripts": ["background.js"],
