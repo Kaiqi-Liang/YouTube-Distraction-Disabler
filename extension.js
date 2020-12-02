@@ -20,13 +20,6 @@ document.querySelector('ytd-app').style.display = 'none';
 
 const cover = document.createElement('div');
 cover.id = 'cover';
-cover.style.cssText = `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-`;
 
 const spinner = document.createElement('img');
 spinner.src = chrome.extension.getURL(`assets/spinner_${window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'}.svg`);
