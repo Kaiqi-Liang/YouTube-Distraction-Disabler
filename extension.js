@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(({ home, related, comments }) => {
+chrome.runtime.onMessage.addListener(({ home, related, comments, notifications }) => {
     document.querySelector('ytd-app').style.display = 'block';
 
     // remove home feed
@@ -9,6 +9,10 @@ chrome.runtime.onMessage.addListener(({ home, related, comments }) => {
     // remove related videos and comments in watch page
     document.getElementById('related').style.display = related ? 'none' : 'block';
     document.getElementById('comments').style.display = comments ? 'none' : 'block';
+
+    // remove notifications
+    document.querySelector('ytd-notification-topbar-button-renderer').style.display = notifications ? 'none' : 'block';
+    document.title = `YouTube ${home && related ? 'Productive' : 'Procrastinative'} Mode`;
 });
 
 // hide the whole page and show a spinner before the page is fully loaded

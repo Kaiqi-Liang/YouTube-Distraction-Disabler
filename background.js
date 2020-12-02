@@ -1,13 +1,14 @@
 let home = true;
 let related = true;
 let comments = true;
+let notifications = true;
 
 chrome.tabs.onUpdated.addListener((tabId, { status }) => {
     if (status === 'complete') sendMessage(tabId);
 });
 
 chrome.runtime.onInstalled.addListener(() => {
-    ['home', 'related', 'comments'].forEach((context) => {
+    ['Home', 'Related', 'Comments', 'Notifications'].forEach((context) => {
         chrome.contextMenus.create({
             id: context,
             title: context,
@@ -19,14 +20,17 @@ chrome.runtime.onInstalled.addListener(() => {
 
     chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
         switch (menuItemId) {
-            case 'home':
+            case 'Home':
                 home = checked;
                 break;
-            case 'related':
+            case 'Related':
                 related = checked;
                 break;
-            case 'comments':
+            case 'Comments':
                 comments = checked;
+                break;
+            case 'Notifications':
+                notifications = checked;
                 break;
             default:
                 break;
@@ -36,5 +40,5 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 const sendMessage = (id) => {
-    chrome.tabs.sendMessage(id, { home, related, comments });
+    chrome.tabs.sendMessage(id, { home, related, comments, notifications });
 };
