@@ -17,26 +17,26 @@ chrome.runtime.onInstalled.addListener(() => {
             contexts: ['page_action'],
         });
     });
+});
 
-    chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
-        switch (menuItemId) {
-            case 'Home':
-                home = checked;
-                break;
-            case 'Related':
-                related = checked;
-                break;
-            case 'Comments':
-                comments = checked;
-                break;
-            case 'Notifications':
-                notifications = checked;
-                break;
-            default:
-                break;
-        }
-        sendMessage(tab.id);
-    });
+chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
+    switch (menuItemId) {
+        case 'Home':
+            home = checked;
+            break;
+        case 'Related':
+            related = checked;
+            break;
+        case 'Comments':
+            comments = checked;
+            break;
+        case 'Notifications':
+            notifications = checked;
+            break;
+        default:
+            break;
+    }
+    sendMessage(tab.id);
 });
 
 const sendMessage = (id) => {

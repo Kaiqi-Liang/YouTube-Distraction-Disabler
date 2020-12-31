@@ -22,7 +22,8 @@ const cover = document.createElement('div');
 cover.id = 'cover';
 
 const spinner = document.createElement('img');
-spinner.src = chrome.extension.getURL(`assets/spinner_${window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'}.svg`);
+const light = getComputedStyle(document.querySelector('ytd-app')).getPropertyValue('background-color') === 'rgb(249, 249, 249)';
+spinner.src = chrome.extension.getURL(`assets/spinner_${light ? 'light' : 'dark'}.svg`);
 
 cover.appendChild(spinner);
 document.body.appendChild(cover);

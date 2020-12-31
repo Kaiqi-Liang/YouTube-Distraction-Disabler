@@ -1,12 +1,12 @@
 {
-  "name": "How to Procrastinate on YouTube Productively",
-  "version": "0.0.1",
+  "name": "YouTube Distraction Disabler",
+  "version": "0.0.2",
   "description": "Go on YouTube to watch something productive and not worry about procrastinating on something unrelated",
   "manifest_version": 2,
 
   "page_action": {
-    "default_title": "How to Procrastinate on YouTube Productively",
-    "default_icon": "assets/spinner.png"
+    "default_title": "YouTube Distraction Disabler",
+    "default_icon": "assets/Logo.png"
   },
 
   "permissions": ["contextMenus"],
@@ -26,7 +26,6 @@
   ],
 
   "web_accessible_resources": [
-    "assets/spinner_dark.svg",
-    "assets/spinner_light.svg"
+    "assets/*.svg"
   ]
 }
