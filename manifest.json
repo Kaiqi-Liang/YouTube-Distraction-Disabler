@@ -1,7 +1,7 @@
 {
   "name": "YouTube Distraction Disabler",
   "version": "0.0.2",
-  "description": "Go on YouTube to watch something productive and not worry about procrastinating on something unrelated",
+  "description": "Remove distracting video suggestions on YouTube.",
   "manifest_version": 2,
 
   "page_action": {
