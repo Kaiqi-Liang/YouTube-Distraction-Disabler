@@ -1,14 +1,15 @@
-let home = true;
-let related = true;
-let comments = true;
-let notifications = true;
-
 chrome.tabs.onUpdated.addListener((tabId, { status }) => {
     if (status === 'complete') sendMessage(tabId);
 });
 
 chrome.runtime.onInstalled.addListener(() => {
-    ['Home', 'Related', 'Comments', 'Notifications'].forEach((context) => {
+    chrome.storage.sync.set({
+        home: true,
+        related: true,
+        comments: true,
+        notifications: true,
+    });
+    ['All', 'Home', 'Related', 'Comments', 'Notifications'].forEach((context) => {
         chrome.contextMenus.create({
             id: context,
             title: context,
@@ -21,17 +22,28 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
     switch (menuItemId) {
+        case 'All':
+            chrome.storage.sync.set({
+                home: checked,
+                related: checked,
+                comments: checked,
+                notifications: checked,
+            });
+            ['Home', 'Related', 'Comments', 'Notifications'].forEach((context) => {
+                chrome.contextMenus.update(context, { checked });
+            });
+            break;
         case 'Home':
-            home = checked;
+            chrome.storage.sync.set({ home: checked });
             break;
         case 'Related':
-            related = checked;
+            chrome.storage.sync.set({ related: checked });
             break;
         case 'Comments':
-            comments = checked;
+            chrome.storage.sync.set({ comments: checked });
             break;
         case 'Notifications':
-            notifications = checked;
+            chrome.storage.sync.set({ notifications: checked });
             break;
         default:
             break;
@@ -40,5 +52,7 @@ chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
 });
 
 const sendMessage = (id) => {
-    chrome.tabs.sendMessage(id, { home, related, comments, notifications });
+    chrome.storage.sync.get(['home', 'related', 'comments', 'notifications'], (result) => {
+        chrome.tabs.sendMessage(id, result);
+    });
 };

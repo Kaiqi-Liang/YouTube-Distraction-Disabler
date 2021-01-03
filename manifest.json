@@ -1,15 +1,21 @@
 {
   "name": "YouTube Distraction Disabler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Remove distracting video suggestions on YouTube.",
   "manifest_version": 2,
 
   "page_action": {
-    "default_title": "YouTube Distraction Disabler",
-    "default_icon": "assets/Logo.png"
+    "default_icon": "assets/logo.png"
   },
 
-  "permissions": ["contextMenus"],
+  "icons": {
+    "128": "assets/logo.png"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
 
   "background": {
     "scripts": ["background.js"],
