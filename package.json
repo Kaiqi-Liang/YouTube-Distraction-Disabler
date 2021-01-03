@@ -8,7 +8,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc -w",
+    "build": "rm -r dist && tsc && cp -r src/style.css assets manifest.json dist",
+    "bundle": "sh bundle.sh"
   },
   "repository": {
     "type": "git",
