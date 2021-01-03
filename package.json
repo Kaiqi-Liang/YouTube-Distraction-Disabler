@@ -10,7 +10,7 @@
   "scripts": {
     "start": "tsc -w",
     "build": "rm -r dist && tsc && cp -r src/style.css assets manifest.json dist",
-    "bundle": "sh bundle.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
