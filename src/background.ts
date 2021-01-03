@@ -51,8 +51,8 @@ chrome.contextMenus.onClicked.addListener(({ menuItemId, checked }, tab) => {
     sendMessage(tab.id);
 });
 
-const sendMessage = (id) => {
-    chrome.storage.sync.get(['home', 'related', 'comments', 'notifications'], (result) => {
+const sendMessage = (id: number) => {
+    chrome.storage.sync.get(['home', 'related', 'comments', 'notifications'], (result: Options) => {
         chrome.tabs.sendMessage(id, result);
     });
 };

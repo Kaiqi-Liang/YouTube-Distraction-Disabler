@@ -1,0 +1,23 @@
+{
+  "name": "chrome-extension-youtube",
+  "version": "0.0.4",
+  "description": "Remove distracting video suggestions on YouTube.",
+  "main": "background.ts",
+  "dependencies": {
+    "@types/chrome": "0.0.127"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaiqi-Liang/Chrome-Extension-YouTube.git"
+  },
+  "author": "Kaiqi Liang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaiqi-Liang/Chrome-Extension-YouTube/issues"
+  },
+  "homepage": "https://github.com/Kaiqi-Liang/Chrome-Extension-YouTube#readme"
+}
