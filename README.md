@@ -18,7 +18,7 @@ Finally got some free time and want to deliberately procrastinate on YouTube? Th
     * Inside the directory `deployment`.
     * The first zip file under assets within `Releases`.
 2. Open Chrome.
-3. Navigate to chrome://extensions.
+3. Navigate to `chrome://extensions`.
 4. Enable *Developer mode*.
 5. Click *Load unpacked*.
 6. Select the unzipped directory.
