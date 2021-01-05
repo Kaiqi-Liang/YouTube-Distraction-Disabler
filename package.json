@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "tsc -w",
-    "build": "rm -r dist && tsc && cp -r src/style.css assets manifest.json dist",
+    "build": "rm -rf dist && tsc && cp -r src/style.css assets manifest.json dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
