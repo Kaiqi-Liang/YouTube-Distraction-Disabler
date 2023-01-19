@@ -12,6 +12,12 @@ spinner.src = chrome.extension.getURL(`assets/spinner_${light ? 'light' : 'dark'
 cover.appendChild(spinner);
 document.body.appendChild(cover);
 
+const onLoad = () => {
+    app.style.display = 'block';
+    document.body.removeChild(cover);
+};
+setTimeout(onLoad, 3000);
+
 chrome.runtime.onMessage.addListener(({ home, related, comments, notifications }: Options) => {
     app.style.display = 'block';
 

@@ -3,13 +3,14 @@
   "version": "0.0.4",
   "description": "Remove distracting video suggestions on YouTube.",
   "main": "background.ts",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@types/chrome": "0.0.127"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "tsc -w",
     "build": "rm -rf dist && tsc && cp -r src/style.css assets manifest.json dist",
+    "deploy": "file=`ls deployment/*.zip | tail -1 | cut -d'/' -f2`; major=`echo $file | cut -d'.' -f1`; minor=`echo $file | cut -d'.' -f2`; patch=`echo $file | cut -d'.' -f3`; zip -r deployment/$major.$minor.$(($patch + 1)).zip dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

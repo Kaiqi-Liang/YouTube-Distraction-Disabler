@@ -1,4 +1,5 @@
 # YouTube Distraction Disabler
+
 Remove distracting video suggestions on YouTube.
 
 Just spent an hour on YouTube but still haven't got to the video that you set out to watch? Wanted to learn something on YouTube but always get distracted by your recommended feed? Fear no more, "YouTube Distraction Disabler" is here to remove all of the unrelated videos on YouTube and only show you what you want.
@@ -8,15 +9,18 @@ Finally got some free time and want to deliberately procrastinate on YouTube? Th
 ![Demo](deployment/Demo.jpg)
 
 ## Installation
+
 ### Download it on Chrome Web Store
+
 1. Open Chrome.
 2. Navigate to [Chrome Web Store](https://chrome.google.com/webstore/detail/youtube-distraction-disab/klhmhijgenkomhcobnbdnjkkefbghfab?hl=en-GB).
 3. Click *Add to Chrome*
 
 ### Use the zip file
+
 1. Download the zip file of a particular version from one of the following places:
-    * Inside the directory `deployment`.
-    * The first zip file under assets within `Releases`.
+    * Inside the directory [deployment](deployment).
+    * The first zip file under assets within [Releases](https://github.com/Kaiqi-Liang/YouTube-Distraction-Disabler/releases).
 2. Open Chrome.
 3. Navigate to `chrome://extensions`.
 4. Enable *Developer mode*.
@@ -24,10 +28,9 @@ Finally got some free time and want to deliberately procrastinate on YouTube? Th
 6. Select the unzipped directory.
 
 ### Build it yourself
-Clone the project by running one of the commands below
-```sh
-git clone git@github.com:Kaiqi-Liang/YouTube-Distraction-Disabler.git
-```
+
+Clone the project
+
 ```sh
 git clone https://github.com/Kaiqi-Liang/YouTube-Distraction-Disabler.git
 ```
@@ -39,7 +42,7 @@ cd YouTube-Distraction-Disabler
 npm install
 ```
 
-If `typescript` is already installed then skip this step, otherwise intall it via
+If `typescript` is already installed then skip this step, otherwise install it via
 
 ```sh
 npm install typescript
